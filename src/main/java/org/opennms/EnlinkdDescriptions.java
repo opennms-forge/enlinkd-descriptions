@@ -128,6 +128,8 @@ public class EnlinkdDescriptions {
                 providers = Lists.newArrayList("cdp", "lldp", "bridge");
             }
 
+            providers = providers.stream().map(e -> e.toLowerCase()).collect(Collectors.toList());
+
             for (final String provider : providers) {
                 if (!"cdp".equals(provider) && !"lldp".equals(provider) && !"bridge".equals(provider)) {
                     throw new CmdLineException(parser, "Unknown provider '" + provider + "'.");

@@ -4,6 +4,15 @@ OpenNMS uses the service Enhanced Linkd to collect topology data from network de
 This includes links reported by Cisco Discovery Protocol or Link Layer Discovery Protocol but also links that are computed out of the MAC address tables.
 
 This utility uses this data to generate config snippets for interface port descriptions.
+The corresponding configuration template for a network device will be picked based on the node's sysObjectId.
+Currently this tool provide templates for three different operating systems:
+
+| System Object Id   |    Vendor     |
+|--------------------|:-------------:|
+| .1.3.6.1.4.1.9     |   Cisco IOS   |
+| .1.3.6.1.4.1.2636  | Juniper JUNOS |
+| .1.3.6.1.4.1.52642 |  FS.COM FSOS  |
+
 
 ## Building
 
